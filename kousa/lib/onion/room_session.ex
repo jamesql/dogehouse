@@ -75,7 +75,7 @@ defmodule Onion.RoomSession do
     {:reply, {:ok, state.muteMap}, state}
   end
 
-  def handle_call({:get_speak_requests}, _, state}) do
+  def handle_call({:get_speak_requests}, _, state) do
     {:reply, {:ok, state.speak_requests}, state}
   end
 

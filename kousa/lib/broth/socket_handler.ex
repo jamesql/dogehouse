@@ -538,7 +538,7 @@ defmodule Broth.SocketHandler do
   def handler("ask_to_speak", _data, state) do
     with {:ok, room_id} <- Users.tuple_get_current_room_id(state.user_id) do
 
-    {_, {_, v}, _} = RegUtils.lookup_and_call(Onion.RoomSession, room_id, {:speak_requests}) 
+    {_, {_, v}} = RegUtils.lookup_and_call(Onion.RoomSession, room_id, {:get_speak_requests}) 
     if (v) do # check if speak_requests is true
       case RoomPermissions.ask_to_speak(state.user_id, room_id) do
         {:ok, %{isSpeaker: true}} ->
