@@ -535,9 +535,9 @@ defmodule Broth.SocketHandler do
      ), state}
   end
 
-  # add validate that the room is accepting speakers
   def handler("ask_to_speak", _data, state) do
     with {:ok, room_id} <- Users.tuple_get_current_room_id(state.user_id) do
+    if () # check if speak_requests is true
       case RoomPermissions.ask_to_speak(state.user_id, room_id) do
         {:ok, %{isSpeaker: true}} ->
           Kousa.Room.internal_set_speaker(state.user_id, room_id)
@@ -552,6 +552,7 @@ defmodule Broth.SocketHandler do
                d: %{userId: state.user_id, roomId: room_id}
              }}
           )
+        end
       end
     end
 
