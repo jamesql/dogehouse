@@ -119,6 +119,13 @@ defmodule Onion.RoomSession do
   end
 
   def handle_cast({:set_speak_requests, value}, state) do
+    bool = 
+      case value do
+        true -> true
+        _ -> false
+        end
+      
+      {:noreply, %{state | speak_requests: bool}}
   end
 
   def handle_cast({:send_ws_msg, platform, msg}, state) do
