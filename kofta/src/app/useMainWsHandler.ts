@@ -360,6 +360,7 @@ export const useMainWsHandler = () => {
         roomId,
         activeSpeakerMap,
         autoSpeaker,
+        acceptingSpeakers,
       }) => {
         // Mute when rejoin and if speaker
         if (
@@ -386,8 +387,22 @@ export const useMainWsHandler = () => {
             users,
             muteMap,
             autoSpeaker,
+            acceptingSpeakers,
           };
         });
+      },
+      accept_listeners_change: ({ value }) => {
+        if (value) {
+          setCurrentRoom((c) => {
+            if (!c) {
+              return c;
+            }
+            return {
+              ...c,
+              acceptingSpeakers: value,
+            }
+          });
+        }
       },
       new_current_room: ({ room }) => {
         if (room) {
