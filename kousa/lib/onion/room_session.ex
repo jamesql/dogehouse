@@ -118,6 +118,9 @@ defmodule Onion.RoomSession do
     {:noreply, %{state | auto_speaker: bool}}
   end
 
+  def handle_cast({:set_speak_requests, value}, state) do
+  end
+
   def handle_cast({:send_ws_msg, platform, msg}, state) do
     ws_fan(state.users, platform, msg)
 

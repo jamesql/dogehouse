@@ -16,6 +16,9 @@ defmodule Kousa.Room do
     end
   end
 
+  def set_speak_requests(user_id, value) do
+  end
+
   @spec make_room_public(any, any) :: nil | :ok
   def make_room_public(user_id, new_name) do
     # this needs to be refactored if a user can have multiple rooms
