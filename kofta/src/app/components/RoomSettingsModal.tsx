@@ -70,14 +70,14 @@ export const RoomSettingsModal: React.FC<RoomSettingsModalProps> = ({
                 );
                 wsend({
                   op: "set_speak_requests",
-                  d: { value: !e.target.checked },
+                  d: { value: e.target.checked },
                 });
               }}
               id="accepting_req"
               type="checkbox"
             />
             <span className={`ml-2`}>
-              {"accept speaking requests"}
+              {"accept speaking requests" /* make translation */} 
             </span>
           </label>
           {currentRoom.isPrivate ? (

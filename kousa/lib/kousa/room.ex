@@ -25,6 +25,12 @@ defmodule Kousa.Room do
           room.id, 
           {:set_speak_requests, value}
         )
+
+      RegUtils.lookup_and_cast(
+        Onion.RoomSession,
+        room.id,
+        {:send_ws_msg, :vscode, %{op: "accept_listeners_change", d: %{value: value}}}
+      )
     end
   end
 
