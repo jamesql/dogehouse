@@ -56,6 +56,30 @@ export const RoomSettingsModal: React.FC<RoomSettingsModalProps> = ({
               {t("components.modals.roomSettingsModal.requirePermission")}
             </span>
           </label>
+          <label className={`flex items-center my-8`} htmlFor="accepting-req">
+            <input
+              checked={!currentRoom.acceptingSpeakers}
+              onChange={(e) => {
+                setCurrentRoom((cr) =>
+                  !cr
+                    ? cr
+                    : {
+                        ...cr,
+                        acceptingSpeakers: !e.target.checked,
+                      }
+                );
+                wsend({
+                  op: "set_speak_requests",
+                  d: { value: !e.target.checked },
+                });
+              }}
+              id="accepting_req"
+              type="checkbox"
+            />
+            <span className={`ml-2`}>
+              {"accept speaking requests"}
+            </span>
+          </label>
           {currentRoom.isPrivate ? (
             <Button
               onClick={() => {

@@ -17,6 +17,15 @@ defmodule Kousa.Room do
   end
 
   def set_speak_requests(user_id, value) do
+    room = Rooms.get_room_by_creator_id(user_id)
+
+    if not is_nil(room) do
+      RegUtils.lookup_and_cast(
+          Onion.RoomSession,
+          room.id, 
+          {:set_speak_requests, value}
+        )
+      )
   end
 
   @spec make_room_public(any, any) :: nil | :ok
