@@ -310,6 +310,9 @@ defmodule Broth.SocketHandler do
     {:ok, state}
   end
 
+  def handler("set_speak_requests", %{"value" => value}, state) do
+  end
+
   # @deprecated
   def handler("create-room", data, state) do
     resp =
