@@ -25,7 +25,7 @@ defmodule Kousa.Room do
           room.id, 
           {:set_speak_requests, value}
         )
-      )
+    end
   end
 
   @spec make_room_public(any, any) :: nil | :ok
