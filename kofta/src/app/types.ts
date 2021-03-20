@@ -50,6 +50,7 @@ export type CurrentRoom = Room & {
   muteMap: Record<string, boolean>;
   activeSpeakerMap: Record<string, boolean>;
   autoSpeaker: boolean;
+  acceptingSpeakers: boolean;
 };
 
 export type WsParam = {
