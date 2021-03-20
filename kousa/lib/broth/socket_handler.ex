@@ -535,6 +535,7 @@ defmodule Broth.SocketHandler do
      ), state}
   end
 
+  # add validate that the room is accepting speakers
   def handler("ask_to_speak", _data, state) do
     with {:ok, room_id} <- Users.tuple_get_current_room_id(state.user_id) do
       case RoomPermissions.ask_to_speak(state.user_id, room_id) do

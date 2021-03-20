@@ -9,7 +9,8 @@ defmodule Onion.RoomSession do
             muteMap: map(),
             inviteMap: map(),
             activeSpeakerMap: map(),
-            auto_speaker: boolean()
+            auto_speaker: boolean(),
+            speak_requests: boolean()
           }
 
     defstruct room_id: "",
@@ -18,7 +19,8 @@ defmodule Onion.RoomSession do
               muteMap: %{},
               inviteMap: %{},
               activeSpeakerMap: %{},
-              auto_speaker: false
+              auto_speaker: false,
+              speak_requests: true
   end
 
   def start_link(%{
@@ -32,6 +34,7 @@ defmodule Onion.RoomSession do
         voice_server_id: voice_server_id,
         users: [],
         auto_speaker: false,
+        speak_requests: true,
         activeSpeakerMap: %{},
         muteMap: %{},
         inviteMap: %{}
