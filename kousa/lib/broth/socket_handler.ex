@@ -311,6 +311,9 @@ defmodule Broth.SocketHandler do
   end
 
   def handler("set_speak_requests", %{"value" => value}, state) do
+    Kousa.Room.set_speak_requests(state.user_id, value)
+
+    {:ok, state}
   end
 
   # @deprecated
