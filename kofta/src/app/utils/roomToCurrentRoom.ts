@@ -8,5 +8,6 @@ export const roomToCurrentRoom = (r: Room): CurrentRoom =>
         users: [],
         activeSpeakerMap: {},
         autoSpeaker: false,
+        acceptingSpeakers: true,
       }
     : r;
