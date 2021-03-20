@@ -58,14 +58,14 @@ export const RoomSettingsModal: React.FC<RoomSettingsModalProps> = ({
           </label>
           <label className={`flex items-center my-8`} htmlFor="accepting-req">
             <input
-              checked={!currentRoom.acceptingSpeakers}
+              checked={currentRoom.acceptingSpeakers}
               onChange={(e) => {
                 setCurrentRoom((cr) =>
                   !cr
                     ? cr
                     : {
                         ...cr,
-                        acceptingSpeakers: !e.target.checked,
+                        acceptingSpeakers: e.target.checked,
                       }
                 );
                 wsend({
