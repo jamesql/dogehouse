@@ -163,7 +163,7 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
                 profile={profile}
               />
             ))}
-            {!iCanSpeak && me && canIAskToSpeak ? (
+            {!iCanSpeak && me && canIAskToSpeak && room.acceptingSpeakers ? (
               <div className={`flex flex-col items-center`}>
                 <CircleButton
                   title="Request to speak"
