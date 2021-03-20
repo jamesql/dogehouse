@@ -36,7 +36,7 @@
       "currentRoom": "Zurzeit in:",
       "startPrivateRoom": "Einen privaten Raum mit diesem Benutzer starten"
     },
-    "followList": {},
+    "followList": { "followHim": "follow", "followingHim": "following" },
     "home": { "createRoom": "Raum erstellen", "refresh": "Aktualisieren" },
     "inviteList": {
       "roomGone": "Raum konnte nicht gefunden werden! Zurück",
@@ -71,7 +71,9 @@
     "room": {
       "speakers": "Sprecher",
       "requestingToSpeak": "Sprachanfragen",
-      "listeners": "Zuhörer"
+      "listeners": "Zuhörer",
+      "allowAll": "Allow all",
+      "allowAllConfirm": "Are you sure? This will allow all {{count}} requesting users to speak"
     },
     "searchUser": { "search": "Suchen..." },
     "soundEffectSettings": { "header": "Ton" },

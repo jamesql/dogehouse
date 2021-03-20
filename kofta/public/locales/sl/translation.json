@@ -36,7 +36,7 @@
       "currentRoom": "Trenutno v:",
       "startPrivateRoom": "Začni zasebno sobo s tem uporabnikom"
     },
-    "followList": {},
+    "followList": { "followHim": "follow", "followingHim": "following" },
     "home": { "createRoom": "Ustvari sobo", "refresh": "Osveži" },
     "inviteList": {
       "roomGone": "Sobe ni bilo mogoče najti! Nazaj",
@@ -71,7 +71,9 @@
     "room": {
       "speakers": "Govorci",
       "requestingToSpeak": "Zahtevajo dovoljenje za vklop zvoka",
-      "listeners": "Poslušalci"
+      "listeners": "Poslušalci",
+      "allowAll": "Allow all",
+      "allowAllConfirm": "Are you sure? This will allow all {{count}} requesting users to speak"
     },
     "searchUser": { "search": "Iskanje..." },
     "soundEffectSettings": { "header": "Zvoki" },
@@ -79,7 +81,9 @@
       "editProfile": "Uredi profil",
       "followsYou": "ti sledi",
       "followers": "Sledilci",
-      "following": "Spremljane osebe"
+      "following": "Spremljane osebe",
+      "followHim": "follow",
+      "followingHim": "following"
     },
     "voiceSettings": {
       "header": "Nastavitve zvoka",

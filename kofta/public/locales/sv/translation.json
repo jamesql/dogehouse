@@ -35,7 +35,7 @@
       "currentRoom": "ansluten till:",
       "startPrivateRoom": "skapa ett privat rum med dem"
     },
-    "followList": {},
+    "followList": { "followHim": "follow", "followingHim": "following" },
     "home": { "createRoom": "Skapa Rum", "refresh": "Uppdatera" },
     "inviteList": {
       "roomGone": "rummet försvann under månförmörkelsen, gå tillbaka",
@@ -70,7 +70,9 @@
     "room": {
       "speakers": "Talare",
       "requestingToSpeak": "Begär att tala",
-      "listeners": "Lyssnare"
+      "listeners": "Lyssnare",
+      "allowAll": "Allow all",
+      "allowAllConfirm": "Are you sure? This will allow all {{count}} requesting users to speak"
     },
     "searchUser": { "search": "sök..." },
     "soundEffectSettings": { "header": "Ljud" },
