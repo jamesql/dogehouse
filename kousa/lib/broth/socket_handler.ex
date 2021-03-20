@@ -537,7 +537,9 @@ defmodule Broth.SocketHandler do
 
   def handler("ask_to_speak", _data, state) do
     with {:ok, room_id} <- Users.tuple_get_current_room_id(state.user_id) do
-    if () # check if speak_requests is true
+
+    {_, {_, v}, _} = RegUtils.lookup(Onion.RoomSession, room_id, {:speak_requests}) 
+    if (v == true) do # check if speak_requests is true
       case RoomPermissions.ask_to_speak(state.user_id, room_id) do
         {:ok, %{isSpeaker: true}} ->
           Kousa.Room.internal_set_speaker(state.user_id, room_id)
